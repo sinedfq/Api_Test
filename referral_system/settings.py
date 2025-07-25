@@ -25,7 +25,6 @@ SECRET_KEY = 'django-insecure-=tojs=#0n!ds-h88@7+8*wg%f*%8y^ca8%u1ps*+_15$)8%bqk
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
 
 
@@ -92,10 +91,20 @@ WSGI_APPLICATION = 'referral_system.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'referral_db',
+        'USER': 'referral_user',
+        'PASSWORD': 'your_password',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        'OPTIONS': {
+            'client_encoding': 'UTF8',
+            # Для Windows может потребоваться:
+            'options': '-c client_encoding=utf8'
+        },
     }
 }
+
 
 
 # Password validation
