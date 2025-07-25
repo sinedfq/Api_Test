@@ -309,4 +309,38 @@ activated_invite_code	- CharField	  Активированный чужой ко
 *пользователи, которые ввели код, отображаются в профиле
 
 
+------- 
 
+Для запуска проекта необходимо создать базу данных PostgreSQL
+
+Примерный скрипт создания:
+```sql
+-- Database: referral_db
+
+-- DROP DATABASE IF EXISTS referral_db;
+
+CREATE DATABASE referral_db
+    WITH
+    OWNER = referral_user
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Russian_Russia.1251'
+    LC_CTYPE = 'Russian_Russia.1251'
+    LOCALE_PROVIDER = 'libc'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+GRANT TEMPORARY, CONNECT ON DATABASE referral_db TO PUBLIC;
+
+GRANT ALL ON DATABASE referral_db TO referral_user;
+```
+
+далее выполнить команды
+
+```bash
+
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+
+```
