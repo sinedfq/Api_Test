@@ -290,3 +290,23 @@ activated_invite_code	- CharField	  Активированный чужой ко
     __str__ возвращает номер телефона
 
 ```
+
+------
+
+<h3>Демонстрация работы приложения:</h3>
+
+Главная страница со вводом номера телефона
+<img width="1918" height="1028" alt="image" src="https://github.com/user-attachments/assets/56a90604-17bb-4d6c-98d4-cf921d1f94f1" />
+
+Страница с вводом кода
+<img width="1913" height="1025" alt="image" src="https://github.com/user-attachments/assets/cfbadad3-4b44-4a49-aa90-c5901e14de9e" />
+
+Страница профиля пользователя
+<img width="1919" height="1030" alt="image" src="https://github.com/user-attachments/assets/bf383397-d826-4314-893f-ec68c3465d80" />
+
+*код генерируется автоматически если номер не был зарегистрирован ранее
+*код можно активировать только 1 раз
+*пользователи, которые ввели код, отображаются в профиле
+
+
+
