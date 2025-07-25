@@ -1,0 +1,25 @@
+{% extends "ref/base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Подтверждение кода</h3>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="phone" value="{{ phone }}">
+                    <div class="mb-3">
+                        <label for="code" class="form-label">4-значный код</label>
+                        <input type="text" class="form-control" id="code" name="code" 
+                               placeholder="1234" required maxlength="4">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Подтвердить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

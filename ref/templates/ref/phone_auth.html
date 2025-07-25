@@ -1,0 +1,24 @@
+{% extends "ref/base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Вход по номеру телефона</h3>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Номер телефона</label>
+                        <input type="text" class="form-control" id="phone" name="phone" 
+                               placeholder="+79123456789" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Получить код</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
